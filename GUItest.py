@@ -1,5 +1,3 @@
-from GUItest import *
-
 from tkinter import *
 
 from tkinter.ttk import *
@@ -18,3 +16,7 @@ btn.pack()
 closeclaw = Button(Window, text = "Click to toggle claw")
 closeclaw.pack()
 closebtn.pack()
+
+
+
+mainloop()
