@@ -23,5 +23,25 @@ def getInput(my_text_box):
 
 #create button for Submitting info
 def submit(my_text_box):
-    sumbit = Button(Window, text = "Submit",command =lambda: getInput(my_text_box))
-    sumbit.pack()
+    submitch = Button(Window, text = "Submit",command =lambda: getInput(my_text_box))
+    submitch.pack()
+
+#creating dropdown menu
+menu = StringVar()
+menu.set("Select motor")
+
+def motorselect():
+    mtrselection = OptionMenu(Window, menu,"Select Motor","Waist","Lower Arm", "Upper Arm", "Wrist","Wrist Rotation")
+    mtrselection.pack()
+    textbox()
+    menuselect = Button(Window,text="Confirm Motor",command=lambda: getmenu)
+    menuselect.pack()
+
+
+#get menu function
+def getmenu():
+    choice = menu.get()
+
+#motor selected
+
+
