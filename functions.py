@@ -5,12 +5,13 @@ from tkinter.ttk import *
 #create screen object
 Window = Tk()
 
+#setting screen size
 Window.geometry('700x300')
 
 
 #creating text box
 def textbox():    
-    my_text_box = Text(Window, height=5, width = 40)
+    my_text_box = Text(Window,height=5, width = 10)
     my_text_box.pack()
     submit(my_text_box)
     return my_text_box
@@ -30,6 +31,7 @@ def submit(my_text_box):
 menu = StringVar()
 menu.set("Select motor")
 
+#motor selection
 def motorselect():
     mtrselection = OptionMenu(Window, menu,"Select Motor","Waist","Lower Arm", "Upper Arm", "Wrist","Wrist Rotation")
     mtrselection.pack()
@@ -41,7 +43,6 @@ def motorselect():
 #get menu function
 def getmenu():
     choice = menu.get()
-
-#motor selected
+    return(choice)
 
 
