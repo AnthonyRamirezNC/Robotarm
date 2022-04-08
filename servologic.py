@@ -82,22 +82,14 @@ def Wrist_rtn(angle):
     Wristrtnsrvo.ChangeDutyCycle(0)
 
     
-def clsclaw(clawstats):
+def clsclaw():
     Clawsrvo.start(0)
-    if clawstats == 1:
-        Clawsrvo.ChangeDutyCycle(2)
-        time.sleep(.5)
-        Clawsrvo.ChangeDuryCycle(0)
-        clawstats = clawstats - 1
-        print(clawstats)
-        return(clawstats)
-
-    elif clawstats == 0:
-        Clawsrvo.ChangeDutyCycle(12)
-        time.sleep(.5)
-        Clawsrvo.ChangeDuryCycle(0)
-        clawstats = clawstats + 1
-        print(clawstats)
-        return(clawstats)
-
-
+    Clawsrvo.ChangeDutyCycle(2)
+    time.sleep(.5)
+    Clawsrvo.ChangeDutyCycle(0)
+    
+def opnclaw():
+    Clawsrvo.start(0)
+    Clawsrvo.ChangeDutyCycle(12)
+    time.sleep(.5)
+    Clawsrvo.ChangeDutyCycle(0)

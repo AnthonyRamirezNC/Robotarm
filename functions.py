@@ -2,7 +2,7 @@ from tkinter import *
 
 from tkinter.ttk import *
 
-#from servologic import *
+from servologic import *
 
 #create screen object
 Window = Tk()
