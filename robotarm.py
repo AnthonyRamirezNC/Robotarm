@@ -12,7 +12,7 @@ closebtn = Button(Window,text = "Close Program",command=lambda: closeprgm()).pac
 
 #motor control buttons
 btn = Button(Window, text = "click to rotate",command = motorselect).pack()
-closeclaw = Button(Window, text = "Click to toggle claw",command = closeclaw.pack()
+closeclaw = Button(Window, text = "Click to toggle claw",command = closeclaw).pack()
 
 
 
