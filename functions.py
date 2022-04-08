@@ -8,7 +8,7 @@ from tkinter.ttk import *
 Window = Tk()
 
 #setting screen size
-Window.geometry('700x300')
+Window.geometry('800x300')
 
 #reset position button
 #def respos():
