@@ -2,7 +2,7 @@ from tkinter import *
 
 from tkinter.ttk import *
 
-from servologic import *
+#from servologic import *
 
 #create screen object
 Window = Tk()
@@ -10,7 +10,9 @@ Window = Tk()
 #setting screen size
 Window.geometry('700x300')
 
-
+#reset position button
+#def respos():
+#    resetbtn = Button(Window, text = 'reset robot arm posittions', command=lambda: #inset reset function here)
 #creating text box
 def textbox():    
     my_text_box = Text(Window,height=5, width = 10)
@@ -46,11 +48,5 @@ def getmenu():
     return(choice)
 
 def closeprgm():
-    Waistsrvo.stop()
-    LowerArmsrvo.stop()
-    UpperArmsrvo.stop()
-    Wristsrvo.stop()
-    Wristrtnsrvo.stop()
-    GPIO.cleanup()
     Window.destroy()
     

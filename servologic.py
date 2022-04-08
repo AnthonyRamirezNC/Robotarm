@@ -5,28 +5,30 @@ import time
 GPIO.setmode(GPIO.BOARD)
 
 #Set Pin 31 as an output, and set Waist as pin 11 as PWM
-GPIO.setup(31,GPIO.OUT)
-Waistsrvo = GPIO.PWM(31,50) #Note 11 is pin, 50 is 50hz pulse
+GPIO.setup(29,GPIO.OUT)
+Waistsrvo = GPIO.PWM(29,50) #Note 11 is pin, 50 is 50hz pulse
 
-#Set Pin 32 as an output, and set Waist as pin _ as PWM
-GPIO.setup(32,GPIO.OUT)
-LowerArmsrvo = GPIO.PWM(32,50)
+#Set Pin 32 as an output, and set Waist as pin 32 as PWM
+GPIO.setup(31,GPIO.OUT)
+LowerArmsrvo = GPIO.PWM(31,50)
 
 
 #OTHER FUNCTIONS ARE WORK IN PROGRESS
-#Set Pin 33 as an output, and set Waist as pin _ as PWM
+#Set Pin 33 as an output, and set Waist as pin 33 as PWM
+GPIO.setup(32,GPIO.OUT)
+UpperArmsrvo = GPIO.PWM(32,50)
+
+#Set Pin 36 as an output, and set Waist as pin 36 as PWM
 GPIO.setup(33,GPIO.OUT)
-UpperArmsrvo = GPIO.PWM(33,50)
+Wristsrvo = GPIO.PWM(33,50)
 
-#Set Pin 36 as an output, and set Waist as pin _ as PWM
+#Set Pin 37 as an output, and set Waist as pin 37 as PWM
 GPIO.setup(36,GPIO.OUT)
-Wristsrvo = GPIO.PWM(36,50)
+Wristrtnsrvo = GPIO.PWM(36,50)
 
-#Set Pin 37 as an output, and set Waist as pin _ as PWM
+#Set Pin 37 as an output, and set Waist as pin 37 as PWM
 GPIO.setup(37,GPIO.OUT)
-Wristrtnsrvo = GPIO.PWM(37,50)
-
-
+Clawsrvo = GPIO.PWM(37,50)
 
 
 #loop to allow user to set servo angle. Try/Finally allows exit with execution of servo.stop and GPIO cleanup
@@ -80,5 +82,22 @@ def Wrist_rtn(angle):
     Wristrtnsrvo.ChangeDutyCycle(0)
 
     
+def clsclaw(clawstats):
+    Clawsrvo.start(0)
+    if clawstats == 1:
+        Clawsrvo.ChangeDutyCycle(2)
+        time.sleep(.5)
+        Clawsrvo.ChangeDuryCycle(0)
+        clawstats = clawstats - 1
+        print(clawstats)
+        return(clawstats)
 
-    
+    elif clawstats == 0:
+        Clawsrvo.ChangeDutyCycle(12)
+        time.sleep(.5)
+        Clawsrvo.ChangeDuryCycle(0)
+        clawstats = clawstats + 1
+        print(clawstats)
+        return(clawstats)
+
+
